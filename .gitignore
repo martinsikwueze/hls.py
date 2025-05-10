@@ -1,2 +1,7 @@
-input*
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.flv
+*.webm
 hls_streams/

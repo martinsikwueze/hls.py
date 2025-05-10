@@ -1,3 +1,4 @@
+import glob
 import os
 import subprocess
 
@@ -69,9 +70,18 @@ def create_hls_streams(input_file, output_dir, resolutions):
         master_playlist.write(master_playlist_content)
     print(f"Master playlist created at {master_playlist_path}")
 
-# Example usage
 if __name__ == "__main__":
-    input_video = "input.mkv"  # Path to your input video file
+
+    # Get list of all files in the current directory
+    video_files = glob.glob("*.*")
+
+    # Filter for common video extensions
+    video_extensions = {'.mp4', '.mkv', '.avi', '.mov', '.flv', '.webm'}
+
+    video_files = [f for f in video_files if os.path.splitext(f)[1].lower() in video_extensions]
+
+    
+    input_video = video_files[0] if video_files else None  # Pick the first video file if available
     output_directory = "hls_streams"  # Root directory to save HLS streams
 
     # Define resolutions and bitrates
