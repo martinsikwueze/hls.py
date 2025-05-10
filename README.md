@@ -9,7 +9,7 @@ A python script to generate hls streams with ffmpeg
     * **Linux**: Download from [John Van Sickle’s FFmpeg Builds](https://johnvansickle.com/ffmpeg/).
 
 ## Usage
-* Place input.mkv and hls.py in the same directory
+* Place a video file and hls.py in the same directory
 
 * Run hls.py with the following command:
 ```sh
